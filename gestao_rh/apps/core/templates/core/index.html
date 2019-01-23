@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm">
+                Bem-vindo, {{ usuario.funcionario.nom_funcionario }}
+                <a class="btn btn-primary" href="{% url 'funcionario_list' %}">Gerenciar Funcionários</a>
+                <a class="btn btn-primary" href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-sm">
+                2 coluna
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-sm">
+                <a class="btn btn-warning" href="{% url 'logout' %}">Logout</a>
+
+                {% if usuario.funcionario.empresa %}
+                <a class="btn btn-info" href="{% url 'empresa_edit' usuario.funcionario.empresa.id %}">Editar Empresa</a>
+                {% else %}
+                <a class="btn btn-info" href="{% url 'empresa_form' %}">Criar Empresa</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

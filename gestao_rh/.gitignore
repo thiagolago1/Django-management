@@ -1,0 +1,5 @@
+.idea
+*.sqlite3
+env
+*.pyc
+gestao_rh/__pycache__/

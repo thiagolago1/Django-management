@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+<h3>Editar Empresas</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button type="submit">Salvar</button>
+</form>
+{% endblock %}
