@@ -3,51 +3,50 @@
 
 {% block main %}
 
-
-
 <h3>Criar Funcionário <i class="fas fa-user-plus"></i></h3>
-<form method="post">
-    {% csrf_token %}
+    
+    <form method="post">
+        {% csrf_token %}
 
-    {{ form|bootstrap }}
+        {{ form|bootstrap }}
 
-        <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
-</form>
+            <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
+    </form>
+
 </br>
+
+Histórico de Documentos:
+</br>
+        
+        {% for documento in object.documento_set.all %}
+            <li>
+                <a href="{{ documento.arquivo.url }} "> {{ documento.dsc_documento }} </a></br>
+            </li>
+        {% endfor %}
+        
+<br>
 
 {% if object %}
 <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
-    Adicionar documento <i class="fas fa-file"></i>
+Adicionar documento <i class="fas fa-file"></i>
 </a>
 {% endif %}
 </br>
 </br>
-Histórico de Documentos:
+
+Banco de horas:
 </br>
-<ul>
-{% for documento in object.documento_set.all %}
-<li>
-<a href="{{ documento.arquivo.url }} "> {{ documento.dsc_documento }} </a></br>
-<li>
-{% endfor %}
-<ul>
+    {% for registro_hora in object.registrohoraextra_set.all %}
+        <li>  
+                Motivo: {{ registro_hora.dsc_motivo  }} | horas: {{ registro_hora.horas }} <br>
+        </li>
+    {% endfor %}
 
-<br>
-{% comment %}
-<h4>Banco de horas</h4>
-<ul>
- {% for registro_hora in object.registrohoraextra_set.all %}
-    <li>
-        <a href="{% url 'update_hora_extra' registro_hora.id %}">
-            {{ registro_hora.dsc_motivo  }} | {{ registro_hora.horas }} <br>
-        </a>
-    </li>
-{% endfor %}
-</ul>
+</br>
+Total de horas extras: {{ object.total_horas_extra }}
 
-<h4>Total de horas extras: {{ object.total_horas_extra }} </h4> {% endcomment %}
-
-</br> </br> 
-<a class="btn btn-primary" href="{% url 'funcionario_list' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
+</br>
+</br> 
+    <a class="btn btn-primary" href="{% url 'funcionario_list' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}
