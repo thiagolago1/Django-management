@@ -7,7 +7,10 @@
 
     {{ form }}
 
-        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
 </form>
+
+</br> </br>
+<a class="btn btn-primary" href="{% url 'list_departamentos' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}

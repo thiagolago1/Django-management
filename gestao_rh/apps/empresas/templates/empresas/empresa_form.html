@@ -3,10 +3,13 @@
 
 {% block main %}
 
-<h3>Editar Empresas</h3>
+<h3>Editar Empresa <i class="fas fa-cog"></i></h3>
 <form method="post">
     {% csrf_token %}
     {{ form|bootstrap }}
-    <button type="submit">Salvar</button>
+    <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
+
+    </br> </br>
+        <a class="btn btn-primary" href="{% url 'home' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 </form>
 {% endblock %}

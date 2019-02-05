@@ -8,12 +8,12 @@
 
     {{ form|bootstrap }}
 
-        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
 
 
 {% if object %}
         <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger">
-            Deletar
+            Deletar <i class="fas fa-trash-alt"></i>
         </a>
     {% endif %}
 
@@ -22,6 +22,6 @@
 
 <br><br>
 
-<a class="btn btn-primary" href="{% url 'list_hora_extra' %}" type="submit">Voltar</a>
+<a class="btn btn-primary" href="{% url 'list_hora_extra' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}

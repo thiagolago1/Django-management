@@ -5,23 +5,29 @@
 
 
 
-<h3>Criar Funcionário</h3>
+<h3>Criar Funcionário <i class="fas fa-user-plus"></i></h3>
 <form method="post">
     {% csrf_token %}
 
     {{ form|bootstrap }}
 
-        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
 </form>
 </br>
 <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
-    Adicionar documento
+    Adicionar documento <i class="fas fa-file"></i>
 </a>
+</br>
+</br>
+Histórico de Documentos:
+</br>
 
 {% for documento in object.documento_set.all %}
 
 <a href="{{ documento.arquivo.url }} "> {{ documento.dsc_documento }} </a> </br>
 
 {% endfor %}
+</br> </br>
+        <a class="btn btn-primary" href="{% url 'funcionario_list' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}

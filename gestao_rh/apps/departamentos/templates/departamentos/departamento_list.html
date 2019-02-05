@@ -2,14 +2,16 @@
 
 {% block main %}
 
-<h3>Listar Departamentos </h3>
+<h3>Lista de Departamentos <i class="fas fa-list-alt"></i></h3>
 
 <br>
         {% for departamento in object_list %}
-            <a href="{% url 'update_departamentos' departamento.id %}"> {{ departamento }} </a> <br><br>
-            <a class="btn btn-danger" href="{% url 'delete_departamentos' departamento.id %}"> Deletar </a>
+            Editar Departamento <a href="{% url 'update_departamentos' departamento.id %}"> {{ departamento }} </a> <i class="fas fa-cogs"></i> <br><br>
+            <a class="btn btn-danger" href="{% url 'delete_departamentos' departamento.id %}"> Deletar <i class="fas fa-trash-alt"></i></a>
 </br><br>
             {% endfor %}
 
-        <a class="btn btn-primary" href="{% url 'create_departamentos' %}"> Novo </a>
+        <a class="btn btn-primary" href="{% url 'create_departamentos' %}"> Novo <i class="fas fa-plus-circle"></i></a>
+        </br> </br>
+        <a class="btn btn-primary" href="{% url 'home' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 {% endblock %}
