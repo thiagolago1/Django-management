@@ -3,19 +3,27 @@
 
 {% block main %}
 
-<h3>Criar Funcionário <i class="fas fa-user-plus"></i></h3>
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm">
+            <h3>Criar Funcionário <i class="fas fa-user-plus"></i></h3>
     
-    <form method="post">
-        {% csrf_token %}
+                <form method="post">
+                    {% csrf_token %}
 
-        {{ form|bootstrap }}
+                    {{ form|bootstrap }}
 
-            <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
-    </form>
-
+                        <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
+                </form>
 </br>
+        </div>
+    </div>
+</div>
 
-Histórico de Documentos:
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm">
+        Histórico de Documentos:
 </br>
         
         {% for documento in object.documento_set.all %}
@@ -27,23 +35,31 @@ Histórico de Documentos:
 <br>
 
 {% if object %}
-<a href="{% url 'create_documento' object.id %}" class="btn btn-success">
-Adicionar documento <i class="fas fa-file"></i>
-</a>
+    <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
+    Adicionar documento <i class="fas fa-file"></i>
+    </a>
 {% endif %}
-</br>
-</br>
 
-Banco de horas:
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm">
+            Banco de horas:
 </br>
     {% for registro_hora in object.registrohoraextra_set.all %}
         <li>  
-                Motivo: {{ registro_hora.dsc_motivo  }} | horas: {{ registro_hora.horas }} <br>
+                Motivo: <a href="{% url 'update_hora_extra' registro_hora.id %}"> {{ registro_hora.dsc_motivo  }} | horas: {{ registro_hora.horas }} </a><br>
         </li>
     {% endfor %}
 
 </br>
-Total de horas extras: {{ object.total_horas_extra }}
+            Total de horas extras: {{ object.total_horas_extra }} horas
+        </div>
+    </div>
+</div>
 
 </br>
 </br> 

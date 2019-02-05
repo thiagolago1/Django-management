@@ -7,12 +7,18 @@
 
 <br>
 <br>
-        {% for funcionario in object_list %}
-             Editar Perfil do <a href="{% url 'update_funcionario' funcionario.id %}">{{ funcionario }} </a> <i class="fas fa-cogs"></i> <br><br>
-            <a class="btn btn-danger" href="{% url 'delete_funcionario' funcionario.id %}"> Deletar <i class="fas fa-trash-alt"></i></a>
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm">
+                {% for funcionario in object_list %}
+                <li>Editar Perfil do <a href="{% url 'update_funcionario' funcionario.id %}">{{ funcionario }} </a> <i class="fas fa-cogs"></i> <br><br>
+                <a class="btn btn-danger" href="{% url 'delete_funcionario' funcionario.id %}"> Deletar <i class="fas fa-trash-alt"></i></a></li>
 </br><br>
-            {% endfor %}
-
+                {% endfor %}
+        </div>
+    </div>
+</div>
+</br>
         <a class="btn btn-primary" href="{% url 'create_funcionario' %}"> Novo <i class="fas fa-plus-circle"></i></a>
         </br> </br>
         <a class="btn btn-primary" href="{% url 'home' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
