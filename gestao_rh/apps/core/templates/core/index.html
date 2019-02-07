@@ -2,7 +2,9 @@
 {% load bootstrap %}
 {% block title %} Django Rules! - Index {% endblock %}
 {% block main %}
+
 <div class="card">
+<span class="border border-dark">
     <div class="card-body">
         <div class="row">
             <div class="col-sm">
@@ -11,7 +13,9 @@
             <a class="btn btn-warning" href="{% url 'logout' %}">Logout <i class="fas fa-sign-out-alt"></i></a>        
             </div>
         </div>
+        </span>
     </div>
+
     <div class="card">
         <div class="card-body">
             <div class="col-sm">
