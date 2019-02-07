@@ -1,7 +1,8 @@
 # Django-management
 
-Criado a partir de aprendizados em curso
-Obs: é importante frizar que está em dev e é somente para aprender, muito provavelmente conterá erros (faz parte do percurso)U
+Criado a partir de aprendizados em curso.
+
+Obs: é importante frizar que está em dev e é somente para aprender, muito provavelmente conterá erros (faz parte do percurso)
 
 ### Ambiente Virtual
 
