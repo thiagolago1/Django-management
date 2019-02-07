@@ -2,13 +2,21 @@
 {% block title %} Django Rules! - Hora Extra{% endblock %}
 {% block main %}
 
-<form method="POST">
-    {% csrf_token %}
-    <h1>Tem certeza que deseja deletar o motivo {{ object }}?</h1>
-    {{ form }}
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Tem certeza que deseja deletar o motivo {{ object }}?</h1>
+            {{ form }}
 
-        <button type="submit" class="btn btn-danger">Deletar <i class="fas fa-trash-alt"></i></button>
-</form>
+                <button type="submit" class="btn btn-danger">Deletar <i class="fas fa-trash-alt"></i></button>
+        </form>
+
+        </div>
+    </div>
+</div>
+
 </br> </br>
 <a class="btn btn-primary" href="{% url 'list_hora_extra' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 {% endblock %}

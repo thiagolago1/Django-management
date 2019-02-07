@@ -4,31 +4,46 @@
 {% block title %} Django Rules! - Hora Extra{% endblock %}
 {% block main %}
 
-<form method="post">
-    {% csrf_token %}
 
-    {{ form|bootstrap }}
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm">
+        {% if object %}
+                        <h3>Editar Hora Extra <i class="fas fa-cogs"></i></h3>
+                    {% else %}
+                        <h3>Criar Hora Extra <i class="fas fa-plus"></i></h3>
+                    {% endif %}
 
-        <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form|bootstrap }}
+
+                <button class="btn btn-primary" type="submit">Salvar <i class="fas fa-save"></i></button>
 
 
-{% if object %}
-        <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger">
-            Deletar <i class="fas fa-trash-alt"></i>
-        </a>
-    {% endif %}
-
-    
-</form>
+        {% if object %}
+                <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger">
+                    Deletar <i class="fas fa-trash-alt"></i>
+                </a>
+            {% endif %}
 
 <br><br>
-        <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-info">
-        Já foi Utilizado
+        <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-info" type="button">
+        Já foi Utilizada
         </button>
 <br><br>
 
+</form>
+
+<h6 id="horas_atualizadas"> Horas Utilizadas: {{ object.funcionario.total_horas_extra }}</h6>
 <p id="mensagem"></p>
 
+        </div>
+    </div>
+</div>
+
+<br><br>
 <a class="btn btn-primary" href="{% url 'list_hora_extra' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}

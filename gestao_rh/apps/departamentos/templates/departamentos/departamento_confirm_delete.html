@@ -2,13 +2,19 @@
 {% block title %} Django Rules! - Departamentos{% endblock %}
 {% block main %}
 
-<form method="post">
-    {% csrf_token %}
-    <h1>Tem certeza que deseja deletar o departamento {{ object }}?</h1>
-    {{ form }}
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm">
+            <form method="post">
+                {% csrf_token %}
+                <h1>Tem certeza que deseja deletar o departamento de {{ object }}?</h1>
+                {{ form }}
 
-        <button type="submit" class="btn btn-danger">Deletar <i class="fas fa-trash-alt"></i></button>
-</form>
+                    <button type="submit" class="btn btn-danger">Deletar <i class="fas fa-trash-alt"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
 
 </br> </br>
 <a class="btn btn-primary" href="{% url 'list_departamentos' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
