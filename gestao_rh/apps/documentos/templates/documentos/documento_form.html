@@ -7,6 +7,7 @@
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    <h3>Adicionar Documento <i class="far fa-file-alt"></i></h3>
     {{ form|bootstrap }}
     <button class="btn btn-success" type="submit">Adicionar <i class="fas fa-plus"></i></button>
 </form>

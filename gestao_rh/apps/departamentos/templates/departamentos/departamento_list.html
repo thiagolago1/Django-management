@@ -9,7 +9,7 @@
     <div class="card-body">
         <div class="col-sm">
             {% for departamento in object_list %}
-                <li>Editar Departamento de <a href="{% url 'update_departamentos' departamento.id %}"> {{ departamento }} </a> <i class="fas fa-cogs"></i> <br><br>
+                <li>Editar Departamento de <a href="{% url 'update_departamentos' departamento.id %}"> {{ departamento }} </a> <i class="fas fa-edit"></i> <br><br>
                 <a class="btn btn-danger" href="{% url 'delete_departamentos' departamento.id %}"> Deletar <i class="fas fa-trash-alt"></i></a></li>
     </br><br>
                 {% endfor %}
@@ -21,5 +21,5 @@
 
         <a class="btn btn-primary" href="{% url 'create_departamentos' %}"> Novo <i class="fas fa-plus-circle"></i></a>
         </br> </br>
-        <a class="btn btn-primary" href="{% url 'home' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
+        <a class="btn btn-info" href="{% url 'home' %}">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 {% endblock %}

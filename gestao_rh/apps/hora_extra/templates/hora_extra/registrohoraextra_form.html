@@ -9,7 +9,7 @@
     <div class="card-body">
         <div class="col-sm">
         {% if object %}
-                        <h3>Editar Hora Extra <i class="fas fa-cogs"></i></h3>
+                        <h3>Editar Hora Extra <i class="fas fa-edit"></i></i></h3>
                     {% else %}
                         <h3>Criar Hora Extra <i class="fas fa-plus"></i></h3>
                     {% endif %}
@@ -30,7 +30,7 @@
 
 <br><br>
         <button onclick="utilizouHoraExtra({{ object.id }})" class="btn btn-info" type="button">
-        Já foi Utilizada
+        Já foi Utilizada <i class="fas fa-check-circle"></i>
         </button>
 <br><br>
 
@@ -44,7 +44,7 @@
 </div>
 
 <br><br>
-<a class="btn btn-primary" href="{% url 'list_hora_extra' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
+<a class="btn btn-info" href="{% url 'list_hora_extra' %}">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}
 

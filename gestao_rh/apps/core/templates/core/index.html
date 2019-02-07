@@ -35,9 +35,9 @@
                 <h3>Gerenciar Empresa <i class="fas fa-building"></i><h3>
                 </br>
                 {% if usuario.funcionario.empresa %}
-                <a class="btn btn-info" href="{% url 'empresa_edit' usuario.funcionario.empresa.id %}">Editar Empresa <i class="fas fa-cog"></i></a>
+                <a class="btn btn-info" href="{% url 'empresa_edit' usuario.funcionario.empresa.id %}">Editar Empresa <i class="fas fa-edit"></i></a>
                 {% else %}
-                <a class="btn btn-info" href="{% url 'empresa_form' %}">Criar Empresa <i class="fas fa-cog"></i></a>
+                <a class="btn btn-info" href="{% url 'empresa_form' %}">Criar Empresa <i class="fas fa-plus"></i></a>
                 {% endif %}
             </div>
         </div>

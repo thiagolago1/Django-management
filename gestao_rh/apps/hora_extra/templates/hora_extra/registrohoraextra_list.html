@@ -13,7 +13,7 @@
                 {% for registro_he in object_list %}
                     <li>Editar Motivo: 
                     <a href="{% url 'update_hora_extra_base' registro_he.id %}">
-                    {{ registro_he }} <i class="fas fa-cogs"></i>
+                    {{ registro_he }} <i class="fas fa-edit"></i>
                     </a>
                     </br></br>
                     <a href="{% url 'delete_hora_extra' registro_he.id %}" class="btn btn-danger">
@@ -34,7 +34,7 @@
 
     <a href="{% url 'create_registro_hora_extra' %}" class="btn btn-primary"> Novo <i class="fas fa-plus-circle"></i></a>
     </br> </br>
-        <a class="btn btn-primary" href="{% url 'home' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
+        <a class="btn btn-info" href="{% url 'home' %}">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 
 {% endblock %}

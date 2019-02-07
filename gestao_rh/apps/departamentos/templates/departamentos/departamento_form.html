@@ -7,7 +7,7 @@
     <div class="card-body">
         <div class="col-sm">
             {% if object %}
-                        <h3>Editar Departamento <i class="fas fa-cogs"></i></h3>
+                        <h3>Editar Departamento <i class="fas fa-edit"></i></i></h3>
                     {% else %}
                         <h3>Criar Departamento <i class="fas fa-plus"></i></h3>
                     {% endif %}
@@ -24,6 +24,6 @@
 </div>
 
 </br> </br>
-<a class="btn btn-primary" href="{% url 'list_departamentos' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
+<a class="btn btn-info" href="{% url 'list_departamentos' %}">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}

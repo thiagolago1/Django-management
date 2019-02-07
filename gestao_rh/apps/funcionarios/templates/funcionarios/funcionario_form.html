@@ -7,7 +7,7 @@
     <div class="card-body">
         <div class="col-sm">
         {% if object %}
-            <h3>Editar Funcionário <i class="fas fa-user-cog"></i></h3>
+            <h3>Editar Funcionário <i class="fas fa-user-edit"></i></h3>
         {% else %}
             <h3>Criar Funcionário <i class="fas fa-user-plus"></i></h3>
         {% endif %}
@@ -26,7 +26,7 @@
 <div class="card">
     <div class="card-body">
         <div class="col-sm">
-        Histórico de Documentos:
+        Histórico de Documentos: <i class="fas fa-folder-open"></i>
 </br>
         
         {% for documento in object.documento_set.all %}
@@ -39,7 +39,7 @@
 
 {% if object %}
     <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
-    Adicionar documento <i class="fas fa-file"></i>
+    Adicionar documento <i class="fas fa-file-alt"></i>
     </a>
 {% endif %}
 
@@ -50,7 +50,7 @@
 <div class="card">
     <div class="card-body">
         <div class="col-sm">
-            Banco de horas:
+            Banco de horas: <i class="fas fa-user-clock"></i>
 </br>
     {% for registro_hora in object.registrohoraextra_set.all %}
         <li>  
@@ -66,6 +66,6 @@
 
 </br>
 </br> 
-    <a class="btn btn-primary" href="{% url 'funcionario_list' %}" type="submit">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
+    <a class="btn btn-info" href="{% url 'funcionario_list' %}">Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 
 {% endblock %}
