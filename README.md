@@ -1,6 +1,7 @@
 # Django-management
 
 Criado a partir de aprendizados em curso
+Obs: é importante frizar que está em dev e é somente para aprender, muito provavelmente conterá erros (faz parte do percurso)U
 
 ### Ambiente Virtual
 
@@ -20,9 +21,9 @@ Aplica as migrações do db
 depois
 `./manage.py migrate`
 
-cria um usurário para testar
-`./manage.py createsuperuser`Up
+cria um usuário para testar
+`./manage.py createsuperuser`
 
 ### Servidor
-
+Liga o servidor
 `./manage.py runserver` 
