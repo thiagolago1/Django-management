@@ -15,11 +15,22 @@
                 <a class="btn btn-danger" href="{% url 'delete_funcionario' funcionario.id %}"> Deletar <i class="fas fa-trash-alt"></i></a></li>
 </br><br>
                 {% endfor %}
+
+                </br> 
+
+        <a href="{% url 'relatorio_funcionarios' %}" class="btn btn-info">Relatório de funcionários </a>
+    
+        <a href="{% url 'relatorio_funcionarios_html' %}" class="btn btn-info">Relatório de funcionários HTML</a>
+    
+        {% comment %} <a href="{% url 'relatorio_funcionarios_html_debug' %}" class="btn btn-danger">Relatório de funcionários HTML</a> {% endcomment %}
+
         </div>
     </div>
 </div>
-</br>
-        <a class="btn btn-primary" href="{% url 'create_funcionario' %}"> Novo <i class="fas fa-plus-circle"></i></a>
-        </br> </br>
+
+        </br>
+        <a class="btn btn-primary" href="{% url 'create_funcionario' %}"> Cadastrar Funcionário Novo <i class="fas fa-plus-circle"></i></a>
+
+        </br></br>
         <a class="btn btn-info" href="{% url 'home' %}" >Voltar <i class="fas fa-long-arrow-alt-left"></i></a>
 {% endblock %}
