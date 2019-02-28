@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from rest_framework import routers
+from rest_framework import routers, serializers, viewsets
 from apps.core import views
 from apps.funcionarios.api.views import FuncionarioViewSet
 from apps.hora_extra.api.views import RegistroHoraExtraViewSet

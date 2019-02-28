@@ -8,5 +8,6 @@ from rest_framework.authentication import TokenAuthentication
 class RegistroHoraExtraViewSet(viewsets.ModelViewSet):
     queryset = RegistroHoraExtra.objects.all()
     serializer_class = RegistroHoraExtraSerializer
-    authentication_classes = (TokenAuthentication,)
+    #authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
+    http_method_names = ['get', 'post', 'put', 'options']
